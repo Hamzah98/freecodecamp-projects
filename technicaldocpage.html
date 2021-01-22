@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            *{box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            margin:0;
+            padding:0;}
+            @media screen and (max-width:800px) {
+                #main-doc{
+                    font-size:4px;
+                }
+            }
+            .grid-container{
+                display:grid;
+                grid-template-columns:20% 80%;
+            }
+            #main-doc{
+                grid-column:2/3;
+                font-size:20px;
+                padding:2px;
+                background-color:lightskyblue;
+                color:white;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding:20px;
+            }
+            #navbar{
+                
+                
+                font-size:18px;
+                font-family:Arial, Helvetica, sans-serif;
+                grid-column:1/2;
+                float:left;
+                position:fixed;
+                height:100%;
+                width:20%;
+                background-color:rgb(179, 229, 245);
+               
+            }
+            #navbar ul{
+                
+                list-style-type: none;
+                text-align:center;
+            }
+            #navbar a{
+                border-bottom:1px solid black;
+                width:100%;
+                text-align:center;
+                padding:4% 0 4% 0;
+                text-decoration:none;
+                display:block;
+                transition: 0.2s ease;
+            }
+            #navbar a:hover{
+                background-color:blue;
+                color:white;
+            }
+
+            code{
+                background-color:rgb(23, 189, 211);
+                color:black;
+            }
+            /* MEDIA QUERIES */
+            @media screen and (max-width:800px) {
+                #main-doc{
+                    font-size:16px;
+                }
+                #navbar a{
+                    font-size:12px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class = "grid-container">
+        <div id = "navbar">
+                <ul>
+                    <li><a class = "nav-link" href = "#IntroToCSS">Introduction to CSS</a></li>
+                    <li><a class = "nav-link" href = "#Syntax">CSS Syntax</a></li>
+                    <li><a class = "nav-link" href = "#Layout">Layout using CSS</a></li>
+                    <li><a class = "nav-link" href = "#AestheticsAndDesign">Design and Aesthetics</a></li>
+                    <li><a class = "nav-link" href = "#Animations">CSS Animations</a></li>
+                    <li><a class = "nav-link" href = "#MediaQueries">CSS Media Queries</a></li>
+                    
+                </ul>
+            </div>
+        <div id = "main-doc">
+            
+            <section class = "main-section" id = "IntroToCSS">
+                <h1>Introduction to CSS</h1>
+<p>CSS stands for Cascading Style Sheets.
+CSS describes how HTML elements are to be displayed on screen, paper, or in other media.
+CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+External stylesheets are stored in CSS files.</p>
+<h3>Why CSS?</h3>
+<p>
+    CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes. 
+
+    HTML was NEVER intended to contain tags for formatting a web page!
+
+HTML was created to describe the content of a web page. When tags like <code>font</code>, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive process.
+
+To solve this problem, the World Wide Web Consortium (W3C) created CSS.
+
+CSS removed the style formatting from the HTML page!
+</p>
+
+            </section>
+            <section class = "main-section" id = "Syntax">
+                <h2>CSS Syntax</h2>
+               <p> A CSS rule-set consists of a selector and a declaration block:
+                <br>
+                <br>
+
+<code> h1 {color:blue;}</code>
+<br>
+<br>
+
+The selector points to the HTML element you want to style.
+
+The declaration block contains one or more declarations separated by semicolons.
+
+Each declaration includes a CSS property name and a value, separated by a colon.
+
+A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.</p>
+<p>
+    HTML elements are selected to style using 3 ways
+    <ul>
+        <li>
+           <strong>The id selector</strong>
+           <p>The id selector uses the id attribute of an HTML element to select a specific element.
+
+                The id of an element should be unique within a page, so the id selector is used to select one unique element!
+                
+                To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+                
+                The style rule below will be applied to the HTML element with id="para1":
+                <br>
+                <br>
+            <code>
+                    #para1 {
+                        text-align: center;
+                        color: red;
+                    }
+            </code></p>
+
+        </li>
+        <li><strong>The class selector</strong>
+        <p>
+                The class selector selects elements with a specific class attribute.
+
+                To select elements with a specific class, write a period (.) character, followed by the name of the class.
+                
+                In the example below, all HTML elements with class="center" will be red and center-aligned:
+       
+    <br>
+<br>
+        <code>
+            .center{text-align:center;color:red;}
+        </code>
+    </p>        
+</li>
+        <li><strong>The element selector</strong>
+        <p>
+                The element selector selects elements based on the element name.
+
+                You can select all <code>p</code> elements on a page like this (in this case, all <code>p</code> elements will be center-aligned, with a red text color):
+                <br>
+                <br>
+                <code>
+                    p{text-align:center;
+                        color:red;}
+                </code>
+        </p></li>
+    </ul>
+</p>
+            </section>
+            <section class = "main-section" id = "Layout">
+                <h1>Website Layout using CSS</h1><p>
+                A website is often divided into:
+                <ul>
+                    <li>Header:<p>A header is usually located at the top of the website (or right below a top navigation menu). It often contains a logo or the website name.</p></li>
+                    <li>Menus:<p>There are varous menus present in the navigation bar under the header to navigate through the page or site.</p></li>
+                    <li>Content:<p>The content is the main part of the site. There are tons of things displayed in the content such a text,quotes,photos,videos,etc. The layout in this section, often depends on the target users. The most common layout is one (or combining them) of the following:
+                        <ul>
+                        <li>1-column (often used for mobile browsers)</li>
+                        <li>2-column (often used for tablets and laptops)</li>
+                        <li>3-column layout (only used for desktops)</li>
+                    </ul>
+                </p></li>
+                    <li>Footer:
+                        <p>The footer is placed at the bottom of your page. It often contains information like copyright and contact info</p>
+                    </li>
+                </ul>
+            </p>
+        </section>
+            <section class = "main-section" id = "AestheticsAndDesign">
+                <h1>Website Design and Aesthetics using CSS</h1>
+                <p>Using CSS you can change the look,feel,sizing,position of any DOM element on the webpage. Be it text,<code>p</code> elements,<code>table</code> elements and the list goes on and on. There are many properties used to make the webpage look better and well organised such as:</p>
+                <ul>
+                    <li><code>color</code></li>
+                    <li><code>font-size</code></li>
+                    <li><code>position</code></li>
+                    <li><code>display</code></li>
+                    <li><code>padding</code></li>
+                    <li><code>border</code></li>
+                    <li><code>overflow</code></li>
+                    <li><code>height</code> and <code>width</code></li>
+                    <li><code>z-index</code></li>
+                    <li><code>float</code></li>
+                </ul>
+            </section>
+            <section class = "main-section" id = "Animations">
+                <h1>Animations using CSS</h1><p>CSS animations allows animation of most HTML elements without using JavaScript or Flash!</p>
+            <h3>Keyframes</h3>
+        <p>To use CSS animation, you must first specify some keyframes for the animation.
+
+            Keyframes hold what styles the element will have at certain times.When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.
+
+            To get an animation to work, you must bind the animation to an element.
+            
+            The following example binds the "example" animation to the <div> element. The animation will last for 4 seconds, and it will gradually change the background-color of the <div> element from "red" to "yellow":</p>
+            <code>
+                /* The animation code */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+            </code>
+        <p>You can also use percentages to define at what time a specific event should occur:</p>
+    <code>
+        /* The animation code */
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+    </code>
+<p>There are a number of properties you can apply</p>
+<ul>
+    <li>
+    <code>animation-delay</code>
+    <p>Specifies a delay for the start of the animation</p>
+    </li>
+    <li>
+    <code>animation-iteration-count</code>
+    <p>Specifies the number of times an animation should run</p>
+    </li>
+    <li>
+    <code>animation-direction</code>
+    <p>Specifies if an animation should run forwards,backwards or in alternate cycles</p>
+    </li>
+    <li>
+    <code>animation-timing-function</code>
+    <p>Specifies the speed curve at which the animation should work</p>
+    </li>
+    <li>
+    <code>animation-fill-mode</code>
+    <p>Specifies the style for the element when the animation is not playing</p>
+    </li>
+</ul></section>
+            <section class = "main-section" id = "MediaQueries">
+                <h1>CSS's Media Queries</h1>
+                <p>The <code>@media</code> rule, introduced in CSS2, made it possible to define different style rules for different media types.
+
+                    Examples: You could have one set of style rules for computer screens, one for printers, one for handheld devices, one for television-type devices, and so on.
+                    
+                    Unfortunately these media types never got a lot of support by devices, other than the print media type.</p>
+                    <h3>CSS3 introduced media queries</h3>
+                    <p>Media queries in CSS3 extended the CSS2 media types idea: Instead of looking for a type of device, they look at the capability of the device.
+
+                        Media queries can be used to check many things, such as:
+                        
+                        width and height of the viewport,
+                        width and height of the device,
+                        orientation (is the tablet/phone in landscape or portrait mode?),
+                        resolution.
+                        Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).</p>
+                        <p>A media query consists of a media type and can contain one or more expressions, which resolve to either true or false.</p>
+                        <code>@media not|only mediatype and (expressions) {
+                            CSS-Code;
+                        }</code>
+                        <p>The result of the query is true if the specified media type matches the type of device the document is being displayed on and all expressions in the media query are true. When a media query is true, the corresponding style sheet or style rules are applied, following the normal cascading rules.
+
+                            Unless you use the not or only operators, the media type is optional and the <code>all</code> type will be implied.</p>
+                            <strong>CSS3 Media Types</strong>
+                            <ul>
+                                <li><code>all</code>
+                                <p>Used for all media type devices.</p></li>
+                                <li><code>print</code>
+                                <p>Used for printers.</p></li>
+                                <li><code>screen</code>
+                                <p>Used for computer screens, tablets, smart-phones etc.</p></li>
+                                <li><code>speech</code>
+                                <p>Used for screenreaders that "reads" the page out loud.</p></li>
+
+                            </ul>
+            </section>
+            </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
