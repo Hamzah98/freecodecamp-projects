@@ -1,7 +1,7 @@
 # freecodecamp-javascript-projects
 this is the branch to store javascript algorithm projects
 
-Find the description of all 5 algorithms and the tests for them
+Find the description of all 5 algorithms
 
 # Telephone number validator
 
@@ -17,15 +17,13 @@ The user may fill out the form field any way they choose as long as it has the f
 1 555 555 5555
 For this challenge you will be presented with a string such as 800-692-7753 or 8oo-six427676;laskdjf. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is 1. Return true if the string is a valid US phone number; otherwise return false.
 
-Test
-
 # Caesars Cipher
 
 Write a function which takes a ROT13 encoded string as input and returns a decoded string.
 
 All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
-#Roman Numeral Converter
+# Roman Numeral Converter
 
 Convert the given number into a roman numeral.
 
