@@ -1,4 +1,4 @@
-# freecodecamp-projects
+# freecodecamp-javascript-projects
 this is the branch to store javascript algorithm projects
 
 Find the description of all 5 algorithms and the tests for them
